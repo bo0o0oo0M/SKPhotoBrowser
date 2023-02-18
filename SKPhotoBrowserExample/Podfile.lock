@@ -9,8 +9,7 @@ DEPENDENCIES:
   - SDWebImage
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - Reveal-SDK
+  trunk:
     - SDWebImage
 
 SPEC CHECKSUMS:
@@ -19,4 +18,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 10bb226cf5508b737fa1a42a3b9fb8e79d7e29e3
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.10.1

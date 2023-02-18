@@ -17,6 +17,10 @@ open class SKPhotoBrowser: UIViewController {
     open var initPageIndex: Int = 0
     open var activityItemProvider: UIActivityItemProvider?
     open var photos: [SKPhotoProtocol] = []
+
+    public var toolActionButton: UIBarButtonItem {
+        return toolbar.toolActionButton
+    }
     
     internal lazy var pagingScrollView: SKPagingScrollView = SKPagingScrollView(frame: self.view.frame, browser: self)
     
@@ -87,10 +91,6 @@ open class SKPhotoBrowser: UIViewController {
         self.initPageIndex = self.currentPageIndex
         animator.senderOriginImage = photos[currentPageIndex].underlyingImage
         animator.senderViewForAnimation = photos[currentPageIndex] as? UIView
-    }
-
-    deinit {
-//        NotificationCenter.default.removeObserver(self)
     }
     
     func setup() {
@@ -236,6 +236,34 @@ open class SKPhotoBrowser: UIViewController {
             return
         }
         delegate?.toolBarActionButtonClicked?(underlyingImage)
+        
+        // var activityItems: [AnyObject] = [underlyingImage]
+        // if photo.caption != nil && includeCaption {
+        //     if let shareExtraCaption = SKPhotoBrowserOptions.shareExtraCaption {
+        //         let caption = photo.caption ?? "" + shareExtraCaption
+        //         activityItems.append(caption as AnyObject)
+        //     } else {
+        //         activityItems.append(photo.caption as AnyObject)
+        //     }
+        // }
+        
+        // if let activityItemProvider = activityItemProvider {
+        //     activityItems.append(activityItemProvider.item as AnyObject)
+        // }
+        
+        // activityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        // activityViewController.completionWithItemsHandler = { (activity, success, items, error) in
+        //     self.hideControlsAfterDelay()
+        //     self.activityViewController = nil
+        // }
+        // if UI_USER_INTERFACE_IDIOM() == .phone {
+        //     present(activityViewController, animated: true, completion: nil)
+        // } else {
+        //     activityViewController.modalPresentationStyle = .popover
+        //     let popover: UIPopoverPresentationController! = activityViewController.popoverPresentationController
+        //     popover.barButtonItem = toolbar.toolActionButton
+        //     present(activityViewController, animated: true, completion: nil)
+        // }
     }
 }
 
