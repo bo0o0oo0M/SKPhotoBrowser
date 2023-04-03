@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SKActionView: UIView {
+open class SKActionView: UIView {
     internal weak var browser: SKPhotoBrowser?
     internal var closeButton: SKCloseButton!
     internal var deleteButton: SKDeleteButton!
