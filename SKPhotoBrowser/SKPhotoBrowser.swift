@@ -584,22 +584,22 @@ private extension SKPhotoBrowser {
     }
 
     func setControlsHidden(_ hidden: Bool, animated: Bool, permanent: Bool) {
-        // timer update
-        cancelControlHiding()
-        
-        // scroll animation
-        pagingScrollView.setControlsHidden(hidden: hidden)
-
-        // paging animation
-        paginationView.setControlsHidden(hidden: hidden)
-        
-        // action view animation
-        actionView.animate(hidden: hidden)
-        
-        if !hidden && !permanent {
-            hideControlsAfterDelay()
-        }
-        setNeedsStatusBarAppearanceUpdate()
+//        // timer update
+//        cancelControlHiding()
+//        
+//        // scroll animation
+//        pagingScrollView.setControlsHidden(hidden: hidden)
+//
+//        // paging animation
+//        paginationView.setControlsHidden(hidden: hidden)
+//        
+//        // action view animation
+//        actionView.animate(hidden: hidden)
+//        
+//        if !hidden && !permanent {
+//            hideControlsAfterDelay()
+//        }
+//        setNeedsStatusBarAppearanceUpdate()
     }
 }
 
